@@ -10,6 +10,7 @@ sap.ui.define([
 	return Controller.extend("service.APP_service.controller.Display", {
 		onInit: function () {
 			this.PerDtails=[];
+			//S
 		var arr = [{
 			value:  "sumit",
 			display: "0.00"
