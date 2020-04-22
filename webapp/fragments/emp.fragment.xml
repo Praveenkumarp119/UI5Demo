@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog id="orgfragid" title="Organizational Unit" class="sapUiPopupWithPadding" items="{orgModel>/results}" liveChange="ddoSearch"
+		confirm="orgConfirm" cancel="orgConfirm">
+		<StandardListItem icon="" iconDensityAware="false" iconInset="false" title="{orgModel>OrgUnit}" description="{orgModel>OrgText}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

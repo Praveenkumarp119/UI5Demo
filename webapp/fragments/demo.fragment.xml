@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog id="demofrg" title="Demo" class="sapUiPopupWithPadding" items="{perModel>/results}" liveChange="ddoSearch"
+		confirm="orgConfirm" cancel="orgConfirm">
+		<StandardListItem icon="" iconDensityAware="false" iconInset="false" title="{perModel>pname}" description="{orgModel>OrgText}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

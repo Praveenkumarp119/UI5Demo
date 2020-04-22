@@ -1,0 +1,108 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="LoanHeaderDetails" sap:content-version="1">
+				<Key><PropertyRef Name="HeaderName"/></Key><Property Name="HeaderName" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Character 100"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="HeaderKey" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Char20" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TransactionNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Transaction"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="ProductType" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Product Type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="Portfolio" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Portfolio" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="FromDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="ToDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="Indicator" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Single-Character Flag"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="searchIndicator" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="searchIndicator"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BusinessPartner" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="30 Characters"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AmountInd" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Single-Character Flag"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="LoanType" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Loan Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="HeaderToItem_NAV" Relationship="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.LoanHeaderToItem_ASC"
+					FromRole="FromRole_LoanHeaderToItem_ASC" ToRole="ToRole_LoanHeaderToItem_ASC"/></EntityType>
+			<EntityType Name="LoanTransactionHelp" sap:content-version="1">
+				<Key><PropertyRef Name="TransactionNumber"/></Key><Property Name="ProductType" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="ProductType"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TransactionNumber" Type="Edm.String" Nullable="false" MaxLength="13" sap:unicode="false" sap:label="Transaction"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="PortfolioSearchHelp" sap:content-version="1">
+				<Key><PropertyRef Name="Rportb"/></Key><Property Name="Bukrs" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Company Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Rportb" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Portfolio" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Xportb" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Portfolio name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="LoanItemDetails" sap:content-version="1">
+				<Key><PropertyRef Name="HeaderName"/></Key><Property Name="HeaderName" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Character 100"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Date" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Dod" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Amount" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Disbursement" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Amount" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PrincipalRepay" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Amount"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="InterestPay" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Amount" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Charges" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Amount" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TotalDebtSrv" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Amount" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Attachment" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="Filename"/></Key><Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="filename" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:label="mimetype" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Value" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="value" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ProductTypeHelp" sap:content-version="1">
+				<Key><PropertyRef Name="Ptype"/></Key><Property Name="Ptype" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Product Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ptext" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="productHelp" sap:content-version="1">
+				<Key><PropertyRef Name="Ptype"/></Key><Property Name="Ptype" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Product Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ptext" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="TransacHlp" sap:content-version="1">
+				<Key><PropertyRef Name="Ptype"/><PropertyRef Name="Ttype"/></Key><Property Name="Ptype" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Product Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ttype" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Transactn Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Namettype" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name of TransType"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="BusinessPartnerSearchHelp" sap:content-version="1">
+				<Key><PropertyRef Name="Rltyp"/></Key><Property Name="Rltyp" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="BP Role" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Rltitl" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Title" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Valdt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Valid On" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="McName1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name 1/last nm"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="McName2" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name2/first nme"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BuSort1" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search term 1"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BuSort2" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search term 2"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Partner" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BusinessPartner"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="LoanTypeHelp" sap:content-version="1">
+				<Key><PropertyRef Name="Loantype"/></Key><Property Name="Producttype" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Product Type"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Loantype" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Loan Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ProductHelpData" sap:content-version="1">
+				<Key><PropertyRef Name="Gsart"/></Key><Property Name="Gsart" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Product Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ltx" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Rantyp" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Contract Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Sanlf" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Prod. Category" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="ProductToTrans_NAV" Relationship="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.ProductToTrans_ASC"
+					FromRole="FromRole_ProductToTrans_ASC" ToRole="ToRole_ProductToTrans_ASC"/></EntityType>
+			<Association Name="LoanHeaderToItem_ASC" sap:content-version="1"><End Type="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.LoanHeaderDetails" Multiplicity="1" Role="FromRole_LoanHeaderToItem_ASC"/><End Type="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.LoanItemDetails" Multiplicity="*" Role="ToRole_LoanHeaderToItem_ASC"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_LoanHeaderToItem_ASC"><PropertyRef Name="HeaderName"/></Principal>
+					<Dependent Role="ToRole_LoanHeaderToItem_ASC"><PropertyRef Name="HeaderName"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="ProductToTrans_ASC" sap:content-version="1"><End Type="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.ProductHelpData" Multiplicity="1" Role="FromRole_ProductToTrans_ASC"/><End Type="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.LoanTransactionHelp" Multiplicity="*" Role="ToRole_ProductToTrans_ASC"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_ProductToTrans_ASC"><PropertyRef Name="Gsart"/></Principal>
+					<Dependent Role="ToRole_ProductToTrans_ASC"><PropertyRef Name="ProductType"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="LoanHeaderDetailsSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.LoanHeaderDetails" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="LoanTransactionHelpSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.LoanTransactionHelp" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="PortfolioSearchHelpSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.PortfolioSearchHelp" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="LoanItemDetailsSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.LoanItemDetails" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="AttachmentSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.Attachment" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="ProductTypeHelp001Set" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.ProductTypeHelp" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="productHelpSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.productHelp" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="TransacHlpSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.TransacHlp" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="BusinessPartnerSearchHelpSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.BusinessPartnerSearchHelp" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="LoanTypeHelpSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.LoanTypeHelp" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ProductHelpDataSet" EntityType="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.ProductHelpData" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="LoanHeaderToItem_ASCSet" Association="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.LoanHeaderToItem_ASC" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="LoanHeaderDetailsSet" Role="FromRole_LoanHeaderToItem_ASC"/><End EntitySet="LoanItemDetailsSet" Role="ToRole_LoanHeaderToItem_ASC"/></AssociationSet>
+				<AssociationSet Name="ProductToTrans_ASCSet01" Association="ZTR_LOAN_DEBT_PAYEMENT_GW_SRV.ProductToTrans_ASC" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ProductHelpDataSet" Role="FromRole_ProductToTrans_ASC"/><End EntitySet="LoanTransactionHelpSet" Role="ToRole_ProductToTrans_ASC"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZTR_LOAN_DEBT_PAYEMENT_GW_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZTR_LOAN_DEBT_PAYEMENT_GW_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

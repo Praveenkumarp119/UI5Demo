@@ -1,0 +1,86 @@
+<mvc:View controllerName="service.APP_service.controller.Display" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns:f="sap.ui.layout.form" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<Panel id="selection" expandable="true" headerText="Selection Criteria" expanded="true" width="auto" class="sapUiResponsiveMargin">
+							<f:SimpleForm id="selectionform" editable="true" width="100%">
+								<f:content>
+									<core:Title/>
+									<Label text="Organizational Unit" design="Bold" required="true"/>
+									<Input id="ddo" showValueHelp="true" editable="true" valueHelpOnly="false" change="onChangeORG" liveChange="onLiveChange"
+										valueHelpRequest="Valuehelporg"/>
+								<Label text="Demo Unit" design="Bold" required="true"/>
+									<Input id="demo" showValueHelp="true" editable="true" valueHelpOnly="false" change="onChangeORG" liveChange="onLiveChange"
+										valueHelpRequest="Valuehelpdemo"/>
+									<Label text="Express Binding" required="true"/>
+									<Input id="expressBng" editable="{=${modelpraveen>/0/display} === '0.00' ? false : true}"/>
+									
+									<Label text="Organizational Unit" design="Bold" required="true"/>
+									<!--<Input id="add" showValueHelp="true" editable="true" valueHelpOnly="false" change="onChangeORG" liveChange="onLiveChange"-->
+									<!--	valueHelpRequest="Addhelporg"/>-->
+									<MultiInput id="add" showValueHelp="true" placeholder="Org" valueHelpRequest="Addhelporg" liveChange="livechangefunc">
+										<!--suggestionItems="{ path: '/PAYROLL_EMPSet'}"-->
+										<customData>
+											<core:CustomData key="multi" value="true"/>
+										</customData>
+										<customData>
+											<core:CustomData key="remember" value="true"/>
+										</customData>
+										<core:Item key="{title}" text="{title}"/>
+									</MultiInput>
+									<core:Title/>
+									<Label design="Bold" text="From Date" required="true"/>
+									<DatePicker id="frmdate" displayFormat="dd.MM.yyyy" valueFormat="yyyyMMdd" change="onchangeFrmDate"/>
+									<Label design="Bold" text="To Date" required="true"/>
+									<DatePicker id="todate" displayFormat="dd.MM.yyyy" valueFormat="yyyyMMdd" change="onchangeToDate"/>
+									<Label/>
+									<Button icon="sap-icon://sys-find" text="Search" type="Emphasized" press="onpressSearch"/>
+								</f:content>
+							</f:SimpleForm>
+						</Panel>
+						<Panel id="tabpanel" expandable="true" headerText="Results" expanded="false" width="auto" class="sapUiResponsiveMargin">
+							<Toolbar>
+								<Title id="headertabTitle" level="H2"/>
+								<ToolbarSpacer/>
+								<SearchField id="searchField" width="20%" placeholder="search for..." liveChange="onSearch" class="sapUiSmallMargin"/>
+								<Button icon="sap-icon://excel-attachment" type="Accept" text="Excel" press="Exporttabledata"/>
+								<Button icon="sap-icon://pdf-attachment" type="Reject" text="PDF" press="onHandleExportPdf"/>
+							</Toolbar>
+							<ScrollContainer vertical="true" horizontal="true" focusable="true">
+								<Table id="mDetails" items="{aModel>/results}">
+									<columns>
+										<Column>
+											<Label design="Bold" text="Empolee Number"/>
+										</Column>
+										<Column>
+											<Label design="Bold" text="Employe Name"/>
+										</Column>
+										<Column>
+											<Label design="Bold" text="Designation"/>
+										</Column>
+										<Column>
+											<Label design="Bold" text="Personal Area"/>
+										</Column>
+										<Column>
+											<Label design="Bold" text="Leave Type"/>
+										</Column>
+									</columns>
+									<ColumnListItem>
+										<Text id="unit2" text="{aModel>PersonalNum}"/>
+										<Text id="qty2" text="{aModel>EmpName}"/>
+										<Text id="metg" text="{aModel>Designation}"/>
+										<Text id="storagel" text="{aModel>PersArea}"/>
+										<Text id="storag" text="{aModel>LeaveType}"/>
+									</ColumnListItem>
+								</Table>
+							</ScrollContainer>
+						</Panel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

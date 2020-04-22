@@ -1,0 +1,58 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZHRPT_LEAVE_AUDIT_GW_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="OrgUnitHelp" sap:content-version="1">
+				<Key><PropertyRef Name="OrgUnit"/></Key><Property Name="OrgUnit" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Org. Unit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OrgText" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Org.Unit Short Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="Download" m:HasStream="true" sap:content-version="1">
+				<Key><PropertyRef Name="FileName"/></Key><Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="MimeType" Type="Edm.String" Nullable="false" MaxLength="200" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="Value" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="LeaveAudit" sap:content-version="1">
+				<Key><PropertyRef Name="PersonalNum"/><PropertyRef Name="EmpName"/></Key><Property Name="PersonalNum" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel No."
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="EmpName" Type="Edm.String" Nullable="false" MaxLength="50" sap:unicode="false" sap:label="c" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="OrgId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Org. Unit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="OrgText" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Org.Unit Short Text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PersArea" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Personnel area"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="PersAreaText" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="PA text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Designation" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Position Short Text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LeaveType" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Subtype" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LeaveText" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="A/A type text"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LeaveFrom" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LeaveTo" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="End Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ReqDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="ReqTime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Field of type TIMS"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RequestType" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="30 Characters"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AppliedDays" Type="Edm.String" Nullable="false" MaxLength="7" sap:unicode="false" sap:label="Att./abs. days"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="LeaveDuration" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Char20"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CheckerRole" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Workflow Role"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CheckerRoleText" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="30 Characters"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CheckerName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Empl./appl.name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CheckedDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CheckedTime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Start time" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CheckerStatus" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Status"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CheckerAction" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="User Decision"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ApproverRole" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Workflow Role"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ApproverRoleText" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="30 Characters"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ApproverName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Empl./appl.name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ApprovedDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ApprovedTime" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Start time"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ApproverStatus" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Status"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ApproverAction" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="User Decision"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="FromDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="ToDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/></EntityType>
+			<EntityType Name="OrgDefaultVal" sap:content-version="1">
+				<Key><PropertyRef Name="Id"/></Key><Property Name="Id" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Desc" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZHRPT_LEAVE_AUDIT_GW_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="OrgUnitHelpSet" EntityType="ZHRPT_LEAVE_AUDIT_GW_SRV.OrgUnitHelp" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="DownloadSet" EntityType="ZHRPT_LEAVE_AUDIT_GW_SRV.Download" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="LeaveAuditSet" EntityType="ZHRPT_LEAVE_AUDIT_GW_SRV.LeaveAudit" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="OrgDefaultValSet" EntityType="ZHRPT_LEAVE_AUDIT_GW_SRV.OrgDefaultVal" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/></EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZHRPT_LEAVE_AUDIT_GW_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZHRPT_LEAVE_AUDIT_GW_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,24 @@
+<!--<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">-->
+<!--	<SelectDialog id="addfragid" title="Transaction Number" class="sapUiPopupWithPadding" items="{orgModel1>/results}" liveChange="ddoSearch"-->
+<!--		confirm="addConfirm" cancel="addConfirm">-->
+<!--		<StandardListItem icon="" iconDensityAware="false" iconInset="false" title="{orgModel1>TransactionNumber}" description="{orgModel1>ProductType}"/>-->
+<!--	</SelectDialog>-->
+<!--</core:FragmentDefinition>-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<TableSelectDialog id="addfragid" contentWidth="22rem" title="Select Employee" multiSelect="true" rememberSelections="true"
+		class="sapUiPopupWithPadding" search="onempsearch" confirm="addConfirm" cancel="_handleValueHelpCancelEmpDialog" resizable="true" draggable="true"
+		items="{orgModel1>/results}">
+		<ColumnListItem >
+			<cells>
+				<ObjectIdentifier title="{orgModel1>TransactionNumber}" text="{orgModel1>ProductType}"/>
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="12em">
+				<header>
+					<Text text="Select All"/>
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
